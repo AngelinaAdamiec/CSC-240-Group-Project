@@ -18,13 +18,17 @@ void Spell::apply(Wizard &caster, Creature &target) {
     caster.mana -= manaCost;
 
     if (effectType == "damage") {
-        target.takeDamage(power, "magic");
         std::cout << caster.name << " casts " << name 
                   << " dealing " << power << " damage." << std::endl;
+
+        target.takeDamage(power, "magic");
+
     } else if (effectType == "heal") {
-        caster.heal(power);
         std::cout << caster.name << " casts " << name 
                   << " and heals for " << power << " health." << std::endl;
+
+        caster.heal(power);
+
     } else {
         std::cout << "Unknown spell effect." << std::endl;
     }
