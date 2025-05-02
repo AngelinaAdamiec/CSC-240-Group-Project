@@ -7,7 +7,8 @@
 
 // This class represents an enemy creature in the game.
 // Each creature has a type, health, attack power, and some resistances to certain spell types.
-
+// Each creature can be of type: GOBLIN, ORC, ELF, DRAGON. 
+// Each creature can have elemental type: FIRE, WATER, EARTH, WIND. 
 class Creature {
 public:
     std::string type;
