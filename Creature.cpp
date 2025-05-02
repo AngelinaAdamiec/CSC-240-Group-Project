@@ -108,7 +108,7 @@ Creature::Creature() {
 }
 
 // Parameterized constructor implementation
-Creature::Creature(std::string t, int hp, int atk, std::vector<std::string> res)
+Creature::Creature(std::string creatureType, string elementalType, int health, int attack, std::vector<std::string> res)
     : type(t), health(hp), attackPower(atk), resistances(res) {}
 
 // Attacks at some value randomly chosen from the difference between max attack power and health. 
