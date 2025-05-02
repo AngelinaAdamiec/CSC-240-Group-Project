@@ -21,7 +21,7 @@ public:
     Creature(); 
 
     // Parameterized constructor that initializes a creature's stats
-    Creature(std::string t, int hp, int atk, std::vector<std::string> res);
+    Creature(std::string t, int hp, int atk, std::vector<std::string> res = " ");
 
     // Function: Simulates creature performing an attack. 
     // Pre:  None. 
