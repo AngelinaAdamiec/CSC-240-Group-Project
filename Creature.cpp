@@ -108,8 +108,7 @@ Creature::Creature() {
 }
 
 // Parameterized constructor implementation
-Creature::Creature(std::string creatureType, string elementalType, int health, int attack, std::vector<std::string> res)
-    : type(t), health(hp), attackPower(atk), resistances(res) {}
+Creature::Creature(std::string ct, std::string et, int hp, int atk, std::vector<std::string> res): type(ct), element(et), health(hp), attackPower(atk), resistances(res) {}
 
 // Attacks at some value randomly chosen from the difference between max attack power and health. 
 int Creature::attack() {
@@ -121,12 +120,22 @@ int Creature::attack() {
 
 // Takes damage unless the spell type is resisted, then damage is reduced by half. 
 void Creature::takeDamage(int amount, std::string spellType) {
-    if (resistances.at(0) == spellType) {
-        health -= amount / 2; 
+
+    // Loop over vector of resistance strings, if match found, half the amount of damage. 
+    for (const std::string& resistance : resistances) {
+        if (resistance == spellType) {
+            std::cout << type << " resists " << spellType << " spells! Damage reduced." << std::endl;
+            amount /= 2; 
+            break;
+        }
     }
+    
+    // Update creature's health. 
     health -= amount; 
-    std::cout << type << " resists " << spellType << " spells! Damage reduced." << std::endl;
-    if (health < 0) health = 0;
+    if (health < 0) {
+        health = 0;
+    }
+
     std::cout << type << " takes " << amount << " damage. Remaining health: " << health << std::endl;
 }
 
