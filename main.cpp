@@ -3,11 +3,12 @@
 #include "Creature.h"
 
 int main() {
+    
     // Create a wizard
     Wizard player("Merlin");
 
-    // Create a creature that is weak to magic (no resistances)
-    Creature goblin("Goblin", 50, 10, {});
+    // Create a creature that is weak to magic (no resistances). 
+    Creature goblin("GOLBIN", "FIRE", 50, 50);
 
     // Create a damaging spell
     Spell fireball("Fireball", 20, "damage", 30);
