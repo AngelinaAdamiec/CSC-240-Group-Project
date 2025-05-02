@@ -11,22 +11,30 @@
 class Creature {
 public:
     std::string type;
+    std::string element;
     int health;
     int attackPower;
     std::vector<std::string> resistances;
 
-    // Constructor that initializes a creature's stats
+    // Default constructor
+    Creature(); 
+
+    // Parameterized constructor that initializes a creature's stats
     Creature(std::string t, int hp, int atk, std::vector<std::string> res);
 
-    // This method simulates the creature performing an attack
-    // For now it just returns the attackPower
+    // Function: Simulates creature performing an attack. 
+    // Pre:  None. 
+    // Post: Returns attack power that scales with creature type and creature instance health. 
     int attack();
 
-    // This method reduces the creature's health
-    // If the spell type is something the creature resists, damage is reduced
+    // Function: Reduces the creature's health
+    // Pre:  None. 
+    // Post: If the spell type is something the creature resists, damage is reduced. 
     void takeDamage(int amount, std::string spellType);
 
-    // Returns true if the creature's health is 0 or below
+    // Function: Simulates defeat. 
+    // Pre:  None. 
+    // Post: Returns true if the creature's health is 0 or below
     bool isDefeated();
 };
 
