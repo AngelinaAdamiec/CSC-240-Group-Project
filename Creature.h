@@ -18,10 +18,15 @@ public:
     std::vector<std::string> resistances;
 
     // Default constructor
+    // Pre:  None. 
+    // Post: Creates a Creature object with random type, random element, health & attack based on type & element, 
+    //       and a resistance based on the creature's elemental type. 
     Creature(); 
 
-    // Parameterized constructor that initializes a creature's stats
-    Creature(std::string t, int hp, int atk, std::vector<std::string> res = " ");
+    // Parameterized constructor that initializes a creature's stats. 
+    // Pre:  None. 
+    // Post: Creates a Creature object with passed arguments. Resistances defaults to none. 
+    Creature(std::string creatureType, std::string elementalType, int health, int attack, std::vector<std::string> res = {"NONE"});
 
     // Function: Simulates creature performing an attack. 
     // Pre:  None. 
